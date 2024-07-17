@@ -3,22 +3,59 @@ document.getElementById('result').addEventListener('click', function calcular(){
     var input2 = Number(document.querySelector("input#num2").value);
     var select = document.querySelector("#operacoes").value;
     var result = document.querySelector('#area-resultado');
+    
+    function soma(a, b) {
+        a = input1
+        b = input2
+        return (a + b)
+    }
 
-    if (select == "adicao") {
-        result.innerHTML = `Deu soma, ${input1} + ${input2} = ${input1 + input2}`;
-    } else if (select == "subtracao") {
-        result.innerHTML = `Deu subtração, ${input1} - ${input2} = ${input1 - input2}`;
-    } else if (select == "multiplicacao") {
-        result.innerHTML = `Deu multiplicação, ${input1} x ${input2} = ${input1 * input2}`;
-    } else if (select == "divisao") {
-        if (input2 === 0) {
-            result.innerHTML = "Não é possível dividir por zero";
-        } else {
-            var divisaoresult = input1 / input2;
-            result.innerHTML = `Deu divisão, ${input1} / ${input2} = ${divisaoresult}`;
+    function sub(a, b) {
+        a = input1
+        b = input2
+        return (a - b)
+    }
+
+    function multi(a, b) {
+        a = input1
+        b = input2
+        return (a * b)
+    }
+
+    function div() {
+        let a = input1
+        let b = input2
+        if (a < 0 || b <= 0) {
+            throw new Error("Divisões por 0 ou por numeros negativos não são permitidas")
         }
+        return (a / b)
+        
+    }
+    
+    try {
+        div()
+    } catch (erro) {
+        result.innerHTML = erro.message
+    }
+    
+    if (select == "adicao") {
+        result.innerHTML = `Soma: ${soma()}`
+    } else if (select == "subtracao") {
+        result.innerHTML = `Soma: ${sub()}`
+    } else if (select == "multiplicacao") {
+        result.innerHTML = `Soma: ${multi()}`
+    } else if (select == "divisao") {
+        result.innerHTML = `Soma: ${div()}`
     }
 });
 
 
-// select == "adicao"
+document.querySelector(".mode").addEventListener('click', function dark(){
+    document.querySelector('.mode').innerHTML = 'Light Mode'
+    document.querySelector('.mode').setAttribute("class", "modelight")
+    document.getElementById('light').setAttribute("id", "dark")
+    
+});
+
+
+
