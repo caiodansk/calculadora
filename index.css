@@ -10,29 +10,34 @@
         margin: 0;
         padding: 0;
     }
+
     
     .main-tittle {
-        color: rgb(10, 134, 134);
-        animation-name: titulo;
-        animation-duration: 3s;
-        animation-iteration-count: infinite;
+        color: rgb(225, 239, 239);
+        animation: titulo 5s infinite;
     }
     
     body {
+        background-image: url(https://wallpapers.com/images/hd/calculator-2560-x-1440-background-9idet8pma9adeqd5.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center ;
         padding: 5%;
-        background-color: rgb(68, 173, 182);
+        background-color: rgba(255, 255, 255, 0.332);
         display: flex;
         justify-content: center;
         align-items: center;
         height: 100vh;
+        z-index: 1;
+        min-width: 320px;
     }
     
     .container {
-        background-color: #fff;
+        background-color: #174b5e;
         border-radius: 10px;
         box-shadow: 0 8px 8px rgba(0, 0, 0, 0.6);
         padding: 20px;
-        border: 4px solid rgb(121, 196, 223);
+        border: 4px solid rgb(114, 137, 146);
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -50,13 +55,14 @@
     select {
         padding: 10px;
         border-radius: 5px;
-        border: 1px solid rgb(121, 196, 223);
+        border: 1px solid rgb(93, 109, 115);
         width: 100%;
     }
+
     
-    button {
+    button, .mode {
         background-color: rgb(121, 196, 223);
-        color: white;
+        color: rgb(13, 120, 150);
         border: none;
         padding: 10px 20px;
         border-radius: 10px;
@@ -65,9 +71,17 @@
         font-weight: bold;
         transition: background-color 0.3s;
     }
+
+    .mode {
+        position: absolute;
+        top: 20px;
+        margin: auto;
+        border: 2px solid black;
+        color: white;
+    }
     
     button:hover {
-        background-color: rgb(100, 170, 200);
+        background-color: rgb(230, 236, 240);
     }
     
     #operacoes {
@@ -83,8 +97,47 @@
     }
     
     #area-resultado{
-        color: rgb(15, 159, 191);
+        color: rgb(241, 246, 247);
         font-weight: bold;
     
     }
+
+    #dark .container{
+        background-color: black;
+        border: 2px solid cyan;
+    }
+
+    #dark input {
+        border: 2px solid cyan;
+        background-color: rgb(148, 147, 147);
+    }
+
+    #dark select {
+        background-color: black;
+        border: 2px solid cyan;
+        color: white;
+    }
+
+    #dark select:hover {
+        background-color: rgba(128, 128, 128, 0.479);
+        cursor: pointer;
+    }
+
+    #dark #result {
+        background-color: black;
+        border: 2px ridge cyan;
+        color: white;
+    }
+
+    #dark #result:hover {
+        background-color: rgba(128, 128, 128, 0.479);
+    }
+
+    #dark .mode {
+        background-color: black;
+        border: 2px ridge cyan;
+        color: white;
+    }
+
+
     
